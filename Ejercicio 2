@@ -1,0 +1,22 @@
+public class ClassTwo {
+    public static void main(String[] args) {
+        
+        // Defino un arreglo de tamaño 10 y lo lleno con valores de tipo long
+        long[] primerArreglo = new long[10];
+        for (int i = 0; i < primerArreglo.length; i++) {
+            primerArreglo[i] = i * 1; //  valor de ejemplo
+        }
+
+        // Segundo arreglo del mismo tamaño y tipo
+        long[] segundoArreglo = new long[10];
+
+        // Copio los elementos del primer arreglo al segundo arreglo
+        System.arraycopy(primerArreglo, 0, segundoArreglo, 0, primerArreglo.length);
+
+        // Imprimo los elementos del segundo arreglo
+        System.out.println("elementos del segundo arreglo:");
+        for (long valor : segundoArreglo) {
+            System.out.println(valor);
+        }
+    }
+}
