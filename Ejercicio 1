@@ -1,0 +1,21 @@
+public class ClassUno {
+    public static void main(String[] args) {
+        // Defino un arreglo de 3 numeros enteros
+        int[] A = new int[3];
+
+        // Creo un objeto  para la entrada de datos
+        Scanner comando = new Scanner(System.in);
+
+        // Pido al usuario que ingrese los tres valores para el arreglo
+        for (int i = 0; i < A.length; i++) {
+            System.out.print("Ingrese el valor para la posición " + i + ": ");
+            A[i] = comando.nextInt();
+        }
+
+        // Se imprimen los valores del arreglo
+        System.out.println("Valores en el arreglo:");
+        for (int valor : A) {
+        System.out.println(valor);
+        }
+    }
+}
