@@ -1,0 +1,48 @@
+public class ClassSiete {
+    public static void main(String[] args) {
+        // Se crea un arreglo numeros de enteros 
+        int[][] nuevo = new int[4][4];
+
+        // Llamamos a la funcion para ingresar los elementos del arreglo
+        ingreso(nuevo);
+
+        // Llamamos a la funcion para mostrar las estadisticas del arreglo
+        Estadistica(nuevo);
+    }
+
+    // Función para ingresar los elementos del arreglo
+    private static void ingreso(int[][] A) {
+        // Creamos un objeto Scanner para leer la entrada del usuario
+        Scanner nuevo = new Scanner(System.in);
+
+        // Solicitamos al usuario que ingrese los elementos 
+        System.out.println("Ingrese los elementos del arreglo:");
+
+        // Utilizamos bucles para recorrer el arreglo y poder ingresar los valores
+        for (int i = 0; i < A.length; i++)
+            for (int j = 0; j < A[i].length; j++)
+                A[i][j] = nuevo.nextInt();
+    }
+    private static void Estadistica(int[][] arreglo) {
+        // Inicializamos variables para el valor mayor, menor y la suma total
+        int mayor = arreglo[0][0], menor = arreglo[0][0], suma = 0;
+
+        // Creamos bucles  para recorrer el arreglo
+        for (int[] fila : arreglo)
+            for (int elemento : fila) {
+                mayor = Math.max(mayor, elemento);
+                menor = Math.min(menor, elemento);
+
+                // Sumamos el elemento actual a la suma total
+                suma += elemento;
+            }
+
+        // Realizamos las operaciones 
+        double promedio = (double) suma / (arreglo.length * arreglo[0].length);
+
+        // Imprimimos los resultados obtenidos
+        System.out.println("Mayor: " + mayor);
+        System.out.println("Menor: " + menor);
+        System.out.println("Promedio: " + promedio);
+    }
+}
