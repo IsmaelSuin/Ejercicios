@@ -1,0 +1,26 @@
+public class ClassThree {
+ public static void main(String[] args) {
+        // Creo un objeto Scanner para la entrada de datos
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicito al usuario el tamaño del arreglo entre 10 y 20 elementos
+        System.out.print("Ingrese el tamaño del arreglo entre 10 y 20 : ");
+        int tamanoArreglo = scanner.nextInt();
+
+
+        // Creo un arreglo de tipo char con el tamaño ingresado por el usuario
+        char[] arregloChar = new char[tamanoArreglo];
+
+        // Se Llena el arreglo con valores proporcionados por el usuario
+        for (int i = 0; i < arregloChar.length; i++) {
+            System.out.print("Ingrese el valor para la posición " + i + ": ");
+            arregloChar[i] = scanner.next().charAt(0);
+        }
+
+        // Imprimo en pantalla los valores en orden inverso
+        System.out.println("Valores en orden inverso:");
+        for (int i = arregloChar.length - 1; i >= 0; i--) {
+            System.out.println(arregloChar[i]);
+        }
+    }
+}
