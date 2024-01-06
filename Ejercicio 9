@@ -1,0 +1,58 @@
+public class ClassNueve {
+    public static void main(String[] args) {
+         // Se crea una nueva matriz de numeros enteros de 4x4
+        int[][] nuevaMatriz = new int[4][4];
+
+        // Llamamos a la función para ingresar los elementos del arreglo
+        ingreso(nuevaMatriz);
+
+        // Llamamos a la función para mostrar las estadísticas del arreglo
+        estadistica(nuevaMatriz);
+
+        // Llamamos a la función para mostrar los elementos del cuadrante
+        cuadrante(nuevaMatriz);
+    }
+
+    private static void ingreso(int[][] matriz) {
+        // Se crea un objeto para leer los datos que ingresa el usuario 
+        Scanner digito = new Scanner(System.in);
+
+        System.out.println("Ingrese los elementos de la matriz");
+
+        for (int i = 0; i < matriz.length; i++)
+            for (int j = 0; j < matriz[i].length; j++)
+                matriz[i][j] = digito.nextInt();
+    }
+
+    private static void estadistica(int[][] matriz) {
+        int mayor = matriz[0][0], menor = matriz[0][0], suma = 0;
+
+        for (int[] fila : matriz)
+            for (int elemento : fila) {
+                mayor = Math.max(mayor, elemento);
+                menor = Math.min(menor, elemento);
+                suma += elemento;
+            }
+
+        double promedio = (double) suma / (matriz.length * matriz[0].length);
+
+        System.out.println("Mayor: " + mayor);
+        System.out.println("Menor: " + menor);
+        System.out.println("Promedio: " + promedio);
+    }
+     //Define la función  que recibe una matriz de enteros
+    private static void cuadrante(int[][] matriz) {
+        System.out.println("Elementos en el cuarto cuadrante");
+
+        int filas = matriz.length;
+        int columnas = matriz[0].length;
+       //Recorren la matriz para encontrar el valor mayor, menor y calcular la suma total
+        for (int i = filas / 2; i < filas; i++) {
+            for (int j = columnas / 2; j < columnas; j++) {
+                System.out.print(matriz[i][j] + " ");
+            }
+        }
+
+       
+    }
+}
